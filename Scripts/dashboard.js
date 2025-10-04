@@ -514,17 +514,12 @@ class AnuxDashboard {
    * Show a specific section with fade effect
    */
   showSection(sectionId) {
-    // Handle special case for 'curriculum' which might be missing the '-section' suffix
-    const sectionElementId = sectionId === 'curriculum' ? 'curriculum-section' : `${sectionId}-section`;
+    const sectionElementId = `${sectionId}-section`;
     const targetSection = document.getElementById(sectionElementId);
     const allSections = document.querySelectorAll('.content-section');
-    
+
     if (!targetSection) {
       console.warn(`Section with ID '${sectionElementId}' not found`);
-      // Fallback to dashboard if section not found
-      if (sectionId !== 'dashboard') {
-        this.showSection('dashboard');
-      }
       return;
     }
     
@@ -561,18 +556,18 @@ class AnuxDashboard {
       
       // Initialize section-specific functionality
       this.initializeSection(sectionId);
-      
+
       // Scroll to top of the section
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
-  
+
   /**
    * Initialize section-specific functionality
    */
   initializeSection(sectionId) {
     console.log(`Initializing section: ${sectionId}`);
-    
+
     try {
       switch(sectionId) {
         case 'dashboard':
@@ -605,51 +600,6 @@ class AnuxDashboard {
     } catch (error) {
       console.error(`Error initializing section ${sectionId}:`, error);
     }
-    document.querySelectorAll('.content-section').forEach(section => {
-      if (section.id !== `${sectionId}-section`) {
-        section.style.display = 'none';
-      }
-    });
-    
-    // Initialize the specific section
-    switch(sectionId) {
-      case 'dashboard':
-        this.initializeDashboard();
-        break;
-      case 'neuronote':
-        this.initializeNeuronote();
-        break;
-      case 'study-planner':
-        this.initializeStudyPlanner();
-        break;
-      case 'quiz-generator':
-        this.initializeQuizGenerator();
-        break;
-      case 'weakness-finder':
-        this.initializeWeaknessFinder();
-        break;
-      case 'analytics':
-        this.initializeAnalytics();
-        break;
-      case 'curriculum':
-        // Initialize curriculum section if needed
-        console.log('Curriculum section initialized');
-        break;
-      case 'collabspace':
-        // Initialize collabspace section if needed
-        console.log('CollabSpace section initialized');
-        break;
-      default:
-        console.warn(`No initialization found for section: ${sectionId}`);
-    }
-    
-    // Update the page title based on the current section
-    this.updatePageTitle(sectionId);
-    
-    // Dispatch a custom event that the section has been changed
-    document.dispatchEvent(new CustomEvent('sectionChanged', { 
-      detail: { section: sectionId }
-    }));
   }
 
   // ===== SECTION INITIALIZERS =====
@@ -670,15 +620,20 @@ class AnuxDashboard {
     }
   }
   
+  initializeCurriculum() {
+    console.log('Initializing Curriculum');
+  }
+
+  initializeCollabSpace() {
+    console.log('Initializing CollabSpace');
+  }
+
   initializeNeuronote() {
     console.log('Initializing Neuronote AI');
     const neuronoteSection = document.getElementById('neuronote-section');
     if (neuronoteSection) {
-      // Initialize Neuronote AI components
       this.setupNeuronoteEditor();
       this.loadNeuronoteContent();
-    } else {
-      console.warn('Neuronote section not found');
     }
   }
   

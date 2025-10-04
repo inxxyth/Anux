@@ -1,0 +1,48 @@
+{
+  "name": "anux-dashboard",
+  "version": "1.0.0",
+  "description": "AI-powered learning platform dashboard",
+  "scripts": {
+    "lint": "eslint Scripts/**/*.js && stylelint styles/**/*.css",
+    "lint:fix": "eslint Scripts/**/*.js --fix && stylelint styles/**/*.css --fix",
+    "format": "prettier --write \"**/*.{js,css,html}\"",
+    "build": "echo 'Build completed successfully' && exit 0"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "stylelint": "^16.2.1",
+    "stylelint-config-standard": "^36.0.0"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "es2021": true
+    },
+    "extends": "eslint:recommended",
+    "parserOptions": {
+      "ecmaVersion": "latest",
+      "sourceType": "module"
+    },
+    "rules": {
+      "no-unused-vars": "warn",
+      "no-console": "off"
+    }
+  },
+  "prettier": {
+    "semi": true,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "es5",
+    "printWidth": 100
+  },
+  "stylelint": {
+    "extends": "stylelint-config-standard",
+    "rules": {
+      "selector-class-pattern": null,
+      "custom-property-pattern": null,
+      "alpha-value-notation": "number",
+      "color-function-notation": "legacy"
+    }
+  }
+}

@@ -21,39 +21,39 @@
       <img src="../logo.png" alt="Anux Logo" class="sidebar-logo">
     </div>
     
-    <nav class="sidebar-nav">
-      <div class="nav-item active" data-section="dashboard">
-        <span class="nav-icon">📊</span>
+    <nav class="sidebar-nav" role="navigation" aria-label="Main navigation">
+      <button class="nav-item active" data-section="dashboard" role="button" aria-label="Navigate to Dashboard" tabindex="0">
+        <span class="nav-icon" aria-hidden="true">📊</span>
         <span class="nav-text">Dashboard</span>
-      </div>
-      <div class="nav-item" data-section="curriculum">
-        <span class="nav-icon">📚</span>
+      </button>
+      <button class="nav-item" data-section="curriculum" role="button" aria-label="Navigate to Curriculum" tabindex="0">
+        <span class="nav-icon" aria-hidden="true">📚</span>
         <span class="nav-text">Curriculum</span>
-      </div>
-      <div class="nav-item" data-section="neuronote">
-        <span class="nav-icon">🧠</span>
+      </button>
+      <button class="nav-item" data-section="neuronote" role="button" aria-label="Navigate to Neuronote AI" tabindex="0">
+        <span class="nav-icon" aria-hidden="true">🧠</span>
         <span class="nav-text">Neuronote AI</span>
-      </div>
-      <div class="nav-item" data-section="study-planner">
-        <span class="nav-icon">📅</span>
+      </button>
+      <button class="nav-item" data-section="study-planner" role="button" aria-label="Navigate to Study Planner" tabindex="0">
+        <span class="nav-icon" aria-hidden="true">📅</span>
         <span class="nav-text">Study Planner</span>
-      </div>
-      <div class="nav-item" data-section="collabspace">
-        <span class="nav-icon">👥</span>
+      </button>
+      <button class="nav-item" data-section="collabspace" role="button" aria-label="Navigate to CollabSpace" tabindex="0">
+        <span class="nav-icon" aria-hidden="true">👥</span>
         <span class="nav-text">CollabSpace</span>
-      </div>
-      <div class="nav-item" data-section="quiz-generator">
-        <span class="nav-icon">🎯</span>
+      </button>
+      <button class="nav-item" data-section="quiz-generator" role="button" aria-label="Navigate to Quiz Generator" tabindex="0">
+        <span class="nav-icon" aria-hidden="true">🎯</span>
         <span class="nav-text">Quiz Generator</span>
-      </div>
-      <div class="nav-item" data-section="weakness-finder">
-        <span class="nav-icon">🔍</span>
+      </button>
+      <button class="nav-item" data-section="weakness-finder" role="button" aria-label="Navigate to Weakness Finder" tabindex="0">
+        <span class="nav-icon" aria-hidden="true">🔍</span>
         <span class="nav-text">Weakness Finder</span>
-      </div>
-      <div class="nav-item" data-section="analytics">
-        <span class="nav-icon">📈</span>
+      </button>
+      <button class="nav-item" data-section="analytics" role="button" aria-label="Navigate to Analytics" tabindex="0">
+        <span class="nav-icon" aria-hidden="true">📈</span>
         <span class="nav-text">Analytics</span>
-      </div>
+      </button>
     </nav>
     
     <div class="sidebar-footer">
@@ -76,12 +76,12 @@
         <p id="page-subtitle">Welcome back! Here's your learning progress overview.</p>
       </div>
       <div class="header-right">
-        <div class="search-box">
-          <input type="text" placeholder="Search anything..." id="global-search">
-          <span class="search-icon">🔍</span>
+        <div class="search-box" role="search">
+          <input type="text" placeholder="Search anything..." id="global-search" aria-label="Search">
+          <span class="search-icon" aria-hidden="true">🔍</span>
         </div>
-        <button class="notification-btn">🔔</button>
-        <button class="settings-btn">⚙️</button>
+        <button class="notification-btn" aria-label="View notifications" title="Notifications">🔔</button>
+        <button class="settings-btn" aria-label="Open settings" title="Settings">⚙️</button>
       </div>
     </header>
 
@@ -154,7 +154,7 @@
               <div class="task-time">Due: Next Week</div>
             </div>
           </div>
-          <button class="add-task-btn">+ Add New Task</button>
+          <button class="add-task-btn" aria-label="Add new task">+ Add New Task</button>
         </div>
 
         <!-- Recent Activity -->
@@ -221,7 +221,7 @@
       <div class="curriculum-container">
         <div class="curriculum-header">
           <h3>📚 My Curriculum</h3>
-          <button class="btn-primary" id="add-subject-btn">+ Add Subject</button>
+          <button class="btn-primary" id="add-subject-btn" aria-label="Add new subject">+ Add Subject</button>
         </div>
         
         <div class="curriculum-content">
