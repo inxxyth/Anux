@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Anux</title>
+  <link rel="stylesheet" href="../styles/dashboard.css">
+  <link rel="stylesheet" href="../styles/curriculum.css">
+  <link rel="icon" type="image/x-icon" href="../logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <script defer src="../Scripts/auth-flow.js"></script>
+  <script defer src="../Scripts/curriculum.manager.js"></script>
+  <script defer src="../Scripts/dashboard.js"></script>
+</head>
+<body>
+  <!-- SIDEBAR NAVIGATION -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <img src="../logo.png" alt="Anux Logo" class="sidebar-logo">
+    </div>
+    
+    <nav class="sidebar-nav">
+      <div class="nav-item active" data-section="dashboard">
+        <span class="nav-icon">📊</span>
+        <span class="nav-text">Dashboard</span>
+      </div>
+      <div class="nav-item" data-section="curriculum">
+        <span class="nav-icon">📚</span>
+        <span class="nav-text">Curriculum</span>
+      </div>
+      <div class="nav-item" data-section="neuronote">
+        <span class="nav-icon">🧠</span>
+        <span class="nav-text">Neuronote AI</span>
+      </div>
+      <div class="nav-item" data-section="study-planner">
+        <span class="nav-icon">📅</span>
+        <span class="nav-text">Study Planner</span>
+      </div>
+      <div class="nav-item" data-section="collabspace">
+        <span class="nav-icon">👥</span>
+        <span class="nav-text">CollabSpace</span>
+      </div>
+      <div class="nav-item" data-section="quiz-generator">
+        <span class="nav-icon">🎯</span>
+        <span class="nav-text">Quiz Generator</span>
+      </div>
+      <div class="nav-item" data-section="weakness-finder">
+        <span class="nav-icon">🔍</span>
+        <span class="nav-text">Weakness Finder</span>
+      </div>
+      <div class="nav-item" data-section="analytics">
+        <span class="nav-icon">📈</span>
+        <span class="nav-text">Analytics</span>
+      </div>
+    </nav>
+    
+    <div class="sidebar-footer">
+      <div class="user-profile">
+        <div class="user-avatar">👤</div>
+        <div class="user-info">
+          <div class="user-name">Student User</div>
+          <div class="user-plan">Pro Plan</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+    <!-- HEADER -->
+    <header class="dashboard-header">
+      <div class="header-left">
+        <h1 id="page-title">Dashboard</h1>
+        <p id="page-subtitle">Welcome back! Here's your learning progress overview.</p>
+      </div>
+      <div class="header-right">
+        <div class="search-box">
+          <input type="text" placeholder="Search anything..." id="global-search">
+          <span class="search-icon">🔍</span>
+        </div>
+        <button class="notification-btn">🔔</button>
+        <button class="settings-btn">⚙️</button>
+      </div>
+    </header>
+
+    <!-- DASHBOARD SECTION -->
+    <section id="dashboard-section" class="content-section active">
+      <div class="dashboard-grid">
+        <!-- Progress Overview -->
+        <div class="dashboard-card progress-card">
+          <div class="card-header">
+            <h3>Today's Progress</h3>
+            <span class="card-icon">📊</span>
+          </div>
+          <div class="progress-content">
+            <div class="progress-circle">
+              <svg class="progress-svg" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="40" class="progress-bg"></circle>
+                <circle cx="50" cy="50" r="40" class="progress-fill" id="progress-circle"></circle>
+              </svg>
+              <div class="progress-text">
+                <span class="progress-percentage" id="progress-percentage">78%</span>
+                <span class="progress-label">Complete</span>
+              </div>
+            </div>
+            <div class="progress-stats">
+              <div class="stat-item">
+                <span class="stat-number" id="hours-studied">4.2</span>
+                <span class="stat-label">Hours Studied</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number" id="tasks-completed">12</span>
+                <span class="stat-label">Tasks Done</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number" id="streak-days">7</span>
+                <span class="stat-label">Day Streak</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Upcoming Tasks -->
+        <div class="dashboard-card tasks-card">
+          <div class="card-header">
+            <h3>Upcoming Tasks</h3>
+            <span class="card-icon">📋</span>
+          </div>
+          <div class="tasks-list" id="tasks-list">
+            <div class="task-item urgent">
+              <div class="task-priority"></div>
+              <div class="task-content">
+                <h4>Math Assignment</h4>
+                <p>Calculus problems due tomorrow</p>
+              </div>
+              <div class="task-time">Due: Tomorrow</div>
+            </div>
+            <div class="task-item medium">
+              <div class="task-priority"></div>
+              <div class="task-content">
+                <h4>Physics Quiz</h4>
+                <p>Thermodynamics chapter review</p>
+              </div>
+              <div class="task-time">Due: Friday</div>
+            </div>
+            <div class="task-item low">
+              <div class="task-priority"></div>
+              <div class="task-content">
+                <h4>History Essay</h4>
+                <p>World War II analysis draft</p>
+              </div>
+              <div class="task-time">Due: Next Week</div>
+            </div>
+          </div>
+          <button class="add-task-btn">+ Add New Task</button>
+        </div>
+
+        <!-- Recent Activity -->
+        <div class="dashboard-card activity-card">
+          <div class="card-header">
+            <h3>Recent Activity</h3>
+            <span class="card-icon">⚡</span>
+          </div>
+          <div class="activity-list" id="activity-list">
+            <div class="activity-item">
+              <div class="activity-icon">🧠</div>
+              <div class="activity-content">
+                <p><strong>Neuronote AI</strong> summarized Biology notes</p>
+                <span class="activity-time">2 hours ago</span>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-icon">🎯</div>
+              <div class="activity-content">
+                <p><strong>Quiz Generator</strong> created Math practice test</p>
+                <span class="activity-time">4 hours ago</span>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-icon">👥</div>
+              <div class="activity-content">
+                <p><strong>CollabSpace</strong> joined Physics study group</p>
+                <span class="activity-time">Yesterday</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="dashboard-card quick-actions-card">
+          <div class="card-header">
+            <h3>Quick Actions</h3>
+            <span class="card-icon">⚡</span>
+          </div>
+          <div class="quick-actions-grid">
+            <button class="quick-action" data-action="create-notes">
+              <span class="action-icon">📝</span>
+              <span class="action-text">Create Notes</span>
+            </button>
+            <button class="quick-action" data-action="generate-quiz">
+              <span class="action-icon">🎯</span>
+              <span class="action-text">Generate Quiz</span>
+            </button>
+            <button class="quick-action" data-action="join-study-group">
+              <span class="action-icon">👥</span>
+              <span class="action-text">Join Study Group</span>
+            </button>
+            <button class="quick-action" data-action="view-analytics">
+              <span class="action-icon">📊</span>
+              <span class="action-text">View Analytics</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CURRICULUM SECTION -->
+    <section id="curriculum-section" class="content-section">
+      <div class="curriculum-container">
+        <div class="curriculum-header">
+          <h3>📚 My Curriculum</h3>
+          <button class="btn-primary" id="add-subject-btn">+ Add Subject</button>
+        </div>
+        
+        <div class="curriculum-content">
+          <div class="subjects-list">
+            <div class="subjects-grid" id="subjects-grid">
+              <!-- Subjects will be dynamically added here -->
+              <div class="empty-state">
+                <div class="empty-icon">📚</div>
+                <h4>No subjects added yet</h4>
+                <p>Add your first subject to get started with your personalized curriculum.</p>
+                <button class="btn-primary" id="add-first-subject">+ Add Your First Subject</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="subject-details">
+            <div id="subject-detail-view" class="empty-detail">
+              <div class="empty-detail-content">
+                <div class="empty-icon">📖</div>
+                <h4>Select a subject</h4>
+                <p>Choose a subject from the list to view and manage its details.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEURONOTE AI SECTION -->
+    <section id="neuronote-section" class="content-section">
+      <div class="neuronote-unified-container">
+        <div class="neuronote-header">
+          <h3>🧠 Neuronote AI Assistant</h3>
+          <p>Transform your notes into powerful study materials with AI</p>
+        </div>
+        
+        <div class="neuronote-content">
+          <div class="input-section">
+            <div class="input-box">
+              <textarea id="notes-input" placeholder="Paste your notes here or upload a file..."></textarea>
+              <div class="input-actions">
+                <button class="upload-btn">📁 Upload File</button>
+                <button class="process-btn" id="process-notes">✨ Process with AI</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="output-section" id="neuronote-output">
+            <div class="output-placeholder">
+              <div class="placeholder-icon">🧠</div>
+              <h4>AI Processing Ready</h4>
+              <p>Upload your notes or paste text above to get started with AI-powered summarization and analysis.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STUDY PLANNER SECTION -->
+    <section id="study-planner-section" class="content-section">
+      <div class="planner-container">
+        <div class="planner-header">
+          <h3>📅 AI Study Planner</h3>
+          <div class="planner-controls">
+            <button class="view-btn active" data-view="week">Week</button>
+            <button class="view-btn" data-view="month">Month</button>
+            <button class="add-schedule-btn">+ Add Schedule</button>
+          </div>
+        </div>
+        
+        <div class="calendar-container">
+          <div class="calendar-header">
+            <button class="nav-btn" id="prev-week">‹</button>
+            <h4 id="current-week">Week of January 6-12, 2025</h4>
+            <button class="nav-btn" id="next-week">›</button>
+          </div>
+          
+          <div class="calendar-grid" id="calendar-grid">
+            <div class="calendar-day">
+              <div class="day-header">
+                <span class="day-name">MON</span>
+                <span class="day-date">6</span>
+              </div>
+              <div class="day-events">
+                <div class="event math">
+                  <span class="event-time">9:00 AM</span>
+                  <span class="event-title">Math Review</span>
+                </div>
+                <div class="event physics">
+                  <span class="event-time">2:00 PM</span>
+                  <span class="event-title">Physics Lab</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="calendar-day">
+              <div class="day-header">
+                <span class="day-name">TUE</span>
+                <span class="day-date">7</span>
+              </div>
+              <div class="day-events">
+                <div class="event chemistry">
+                  <span class="event-time">10:00 AM</span>
+                  <span class="event-title">Chemistry Quiz</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="calendar-day">
+              <div class="day-header">
+                <span class="day-name">WED</span>
+                <span class="day-date">8</span>
+              </div>
+              <div class="day-events">
+                <div class="event history">
+                  <span class="event-time">11:00 AM</span>
+                  <span class="event-title">History Essay</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="calendar-day">
+              <div class="day-header">
+                <span class="day-name">THU</span>
+                <span class="day-date">9</span>
+              </div>
+              <div class="day-events">
+                <div class="event biology">
+                  <span class="event-time">1:00 PM</span>
+                  <span class="event-title">Biology Review</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="calendar-day">
+              <div class="day-header">
+                <span class="day-name">FRI</span>
+                <span class="day-date">10</span>
+              </div>
+              <div class="day-events">
+                <div class="event exam">
+                  <span class="event-time">9:00 AM</span>
+                  <span class="event-title">Final Prep</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="calendar-day weekend">
+              <div class="day-header">
+                <span class="day-name">SAT</span>
+                <span class="day-date">11</span>
+              </div>
+              <div class="day-events">
+                <div class="event review">
+                  <span class="event-time">Free</span>
+                  <span class="event-title">Rest Day</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="calendar-day weekend">
+              <div class="day-header">
+                <span class="day-name">SUN</span>
+                <span class="day-date">12</span>
+              </div>
+              <div class="day-events">
+                <div class="event review">
+                  <span class="event-time">Free</span>
+                  <span class="event-title">Rest Day</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COLLABSPACE SECTION -->
+    <section id="collabspace-section" class="content-section">
+      <div class="collab-container">
+        <div class="collab-sidebar">
+          <div class="collab-header">
+            <h3>👥 CollabSpace</h3>
+            <button class="create-group-btn">+ Create Group</button>
+          </div>
+          
+          <div class="study-groups">
+            <h4>Your Study Groups</h4>
+            <div class="group-list">
+              <div class="group-item active" data-group="physics">
+                <div class="group-avatar">⚛️</div>
+                <div class="group-info">
+                  <h5>Physics 101</h5>
+                  <p>12 members • 3 online</p>
+                </div>
+              </div>
+              <div class="group-item" data-group="math">
+                <div class="group-avatar">📐</div>
+                <div class="group-info">
+                  <h5>Calculus Study</h5>
+                  <p>8 members • 2 online</p>
+                </div>
+              </div>
+              <div class="group-item" data-group="chemistry">
+                <div class="group-avatar">🧪</div>
+                <div class="group-info">
+                  <h5>Organic Chemistry</h5>
+                  <p>15 members • 5 online</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="chat-container">
+          <div class="chat-header">
+            <div class="chat-title">
+              <h4>Physics 101 Study Group</h4>
+              <p>12 members • 3 online</p>
+            </div>
+            <div class="chat-actions">
+              <button class="share-screen-btn">📺 Share Screen</button>
+              <button class="ai-tutor-btn">🤖 AI Tutor</button>
+            </div>
+          </div>
+          
+          <div class="chat-messages" id="chat-messages">
+            <div class="message">
+              <div class="message-avatar">👤</div>
+              <div class="message-content">
+                <div class="message-header">
+                  <span class="message-author">Sarah</span>
+                  <span class="message-time">2:30 PM</span>
+                </div>
+                <p>Can someone explain Newton's 3rd law? I'm having trouble with the concept.</p>
+              </div>
+            </div>
+            
+            <div class="message ai-message">
+              <div class="message-avatar">🤖</div>
+              <div class="message-content">
+                <div class="message-header">
+                  <span class="message-author">AI Tutor</span>
+                  <span class="message-time">2:31 PM</span>
+                </div>
+                <p>For every action, there's an equal and opposite reaction. Think of walking - you push back on the ground, and the ground pushes you forward! Would you like me to provide more examples?</p>
+              </div>
+            </div>
+            
+            <div class="message">
+              <div class="message-avatar">👤</div>
+              <div class="message-content">
+                <div class="message-header">
+                  <span class="message-author">Mike</span>
+                  <span class="message-time">2:32 PM</span>
+                </div>
+                <p>That makes so much sense now! The AI examples are really helpful 🎯</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="chat-input-area">
+            <input type="text" id="chat-input" placeholder="Type your message...">
+            <button class="send-btn" id="send-message">Send</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUIZ GENERATOR SECTION -->
+    <section id="quiz-generator-section" class="content-section">
+      <div class="quiz-container">
+        <div class="quiz-setup">
+          <div class="setup-header">
+            <h3>🎯 Quiz Generator</h3>
+            <p>Create personalized quizzes from your study materials</p>
+          </div>
+          
+          <div class="setup-form">
+            <div class="form-group">
+              <label for="quiz-subject">Subject</label>
+              <select id="quiz-subject">
+                <option value="">Select Subject</option>
+                <option value="math">Mathematics</option>
+                <option value="physics">Physics</option>
+                <option value="chemistry">Chemistry</option>
+                <option value="biology">Biology</option>
+                <option value="history">History</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="quiz-topic">Topic</label>
+              <input type="text" id="quiz-topic" placeholder="e.g., Photosynthesis, Calculus, etc.">
+            </div>
+            
+            <div class="form-group">
+              <label for="quiz-difficulty">Difficulty Level</label>
+              <select id="quiz-difficulty">
+                <option value="easy">Easy</option>
+                <option value="medium" selected>Medium</option>
+                <option value="hard">Hard</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="quiz-questions">Number of Questions</label>
+              <input type="number" id="quiz-questions" value="10" min="5" max="50">
+            </div>
+            
+            <button class="generate-quiz-btn" id="generate-quiz">✨ Generate Quiz</button>
+          </div>
+        </div>
+        
+        <div class="quiz-display" id="quiz-display">
+          <div class="quiz-placeholder">
+            <div class="placeholder-icon">🎯</div>
+            <h4>Ready to Generate Quiz</h4>
+            <p>Fill out the form above to create a personalized quiz with AI-generated questions.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WEAKNESS FINDER SECTION -->
+    <section id="weakness-finder-section" class="content-section">
+      <div class="weakness-container">
+        <div class="weakness-header">
+          <h3>🔍 Weakness Finder</h3>
+          <p>AI-powered analysis to identify and improve your weak areas</p>
+          <button class="analyze-btn" id="analyze-performance">🔍 Analyze Performance</button>
+        </div>
+        
+        <div class="weakness-analysis" id="weakness-analysis">
+          <div class="analysis-grid">
+            <div class="weakness-card">
+              <div class="weakness-subject">
+                <h4>📐 Mathematics</h4>
+                <span class="weakness-score weak">Needs Improvement</span>
+              </div>
+              <div class="weakness-details">
+                <div class="weakness-bar">
+                  <div class="weakness-fill" style="width: 35%"></div>
+                  <span class="weakness-percentage">35%</span>
+                </div>
+                <div class="weakness-topics">
+                  <h5>Weak Areas:</h5>
+                  <ul>
+                    <li>Calculus Integration</li>
+                    <li>Differential Equations</li>
+                    <li>Complex Numbers</li>
+                  </ul>
+                </div>
+                <button class="improve-btn">📚 Get Study Plan</button>
+              </div>
+            </div>
+            
+            <div class="weakness-card">
+              <div class="weakness-subject">
+                <h4>🧪 Chemistry</h4>
+                <span class="weakness-score moderate">Moderate</span>
+              </div>
+              <div class="weakness-details">
+                <div class="weakness-bar">
+                  <div class="weakness-fill" style="width: 65%"></div>
+                  <span class="weakness-percentage">65%</span>
+                </div>
+                <div class="weakness-topics">
+                  <h5>Weak Areas:</h5>
+                  <ul>
+                    <li>Organic Reactions</li>
+                    <li>Thermodynamics</li>
+                  </ul>
+                </div>
+                <button class="improve-btn">📚 Get Study Plan</button>
+              </div>
+            </div>
+            
+            <div class="weakness-card">
+              <div class="weakness-subject">
+                <h4>⚛️ Physics</h4>
+                <span class="weakness-score strong">Strong</span>
+              </div>
+              <div class="weakness-details">
+                <div class="weakness-bar">
+                  <div class="weakness-fill" style="width: 85%"></div>
+                  <span class="weakness-percentage">85%</span>
+                </div>
+                <div class="weakness-topics">
+                  <h5>Minor Areas:</h5>
+                  <ul>
+                    <li>Quantum Mechanics</li>
+                  </ul>
+                </div>
+                <button class="improve-btn">📚 Get Study Plan</button>
+              </div>
+            </div>
+            
+            <div class="weakness-card">
+              <div class="weakness-subject">
+                <h4>🧬 Biology</h4>
+                <span class="weakness-score strong">Strong</span>
+              </div>
+              <div class="weakness-details">
+                <div class="weakness-bar">
+                  <div class="weakness-fill" style="width: 90%"></div>
+                  <span class="weakness-percentage">90%</span>
+                </div>
+                <div class="weakness-topics">
+                  <h5>Excellent Performance!</h5>
+                  <p>Keep up the great work!</p>
+                </div>
+                <button class="improve-btn">🎯 Advanced Topics</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ANALYTICS SECTION -->
+    <section id="analytics-section" class="content-section">
+      <div class="analytics-container">
+        <div class="analytics-header">
+          <h3>📈 Learning Analytics</h3>
+          <div class="analytics-filters">
+            <select id="analytics-period">
+              <option value="week">This Week</option>
+              <option value="month" selected>This Month</option>
+              <option value="year">This Year</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="analytics-grid">
+          <div class="analytics-card">
+            <div class="card-header">
+              <h4>Study Time Distribution</h4>
+              <span class="card-icon">⏱️</span>
+            </div>
+            <div class="chart-container">
+              <div class="pie-chart" id="study-time-chart">
+                <div class="chart-segment math" style="--percentage: 30%"></div>
+                <div class="chart-segment physics" style="--percentage: 25%"></div>
+                <div class="chart-segment chemistry" style="--percentage: 20%"></div>
+                <div class="chart-segment biology" style="--percentage: 15%"></div>
+                <div class="chart-segment history" style="--percentage: 10%"></div>
+              </div>
+              <div class="chart-legend">
+                <div class="legend-item">
+                  <span class="legend-color math"></span>
+                  <span>Mathematics (30%)</span>
+                </div>
+                <div class="legend-item">
+                  <span class="legend-color physics"></span>
+                  <span>Physics (25%)</span>
+                </div>
+                <div class="legend-item">
+                  <span class="legend-color chemistry"></span>
+                  <span>Chemistry (20%)</span>
+                </div>
+                <div class="legend-item">
+                  <span class="legend-color biology"></span>
+                  <span>Biology (15%)</span>
+                </div>
+                <div class="legend-item">
+                  <span class="legend-color history"></span>
+                  <span>History (10%)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="analytics-card">
+            <div class="card-header">
+              <h4>Performance Trends</h4>
+              <span class="card-icon">📊</span>
+            </div>
+            <div class="chart-container">
+              <div class="bar-chart" id="performance-chart">
+                <div class="chart-bars">
+                  <div class="bar" style="height: 60%" data-subject="Math" data-score="60%"></div>
+                  <div class="bar" style="height: 85%" data-subject="Physics" data-score="85%"></div>
+                  <div class="bar" style="height: 65%" data-subject="Chemistry" data-score="65%"></div>
+                  <div class="bar" style="height: 90%" data-subject="Biology" data-score="90%"></div>
+                  <div class="bar" style="height: 75%" data-subject="History" data-score="75%"></div>
+                </div>
+                <div class="chart-labels">
+                  <span>Math</span>
+                  <span>Physics</span>
+                  <span>Chemistry</span>
+                  <span>Biology</span>
+                  <span>History</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="analytics-card">
+            <div class="card-header">
+              <h4>Study Streak</h4>
+              <span class="card-icon">🔥</span>
+            </div>
+            <div class="streak-display">
+              <div class="streak-number">7</div>
+              <div class="streak-label">Days</div>
+              <div class="streak-message">Keep it up! You're on fire! 🔥</div>
+            </div>
+          </div>
+          
+          <div class="analytics-card">
+            <div class="card-header">
+              <h4>Weekly Goals</h4>
+              <span class="card-icon">🎯</span>
+            </div>
+            <div class="goals-list">
+              <div class="goal-item completed">
+                <div class="goal-checkbox">✓</div>
+                <div class="goal-text">Study 20 hours this week</div>
+                <div class="goal-progress">20/20 hrs</div>
+              </div>
+              <div class="goal-item in-progress">
+                <div class="goal-checkbox">○</div>
+                <div class="goal-text">Complete 5 practice quizzes</div>
+                <div class="goal-progress">3/5 done</div>
+              </div>
+              <div class="goal-item pending">
+                <div class="goal-checkbox">○</div>
+                <div class="goal-text">Review weak topics</div>
+                <div class="goal-progress">0/3 done</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

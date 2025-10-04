@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anux - AI-Powered Academic Platform</title>
+  <link rel="stylesheet" href="../styles/styles.css">
+  <link rel="stylesheet" href="../styles/usp-section.css">
+  <link rel="stylesheet" href="../styles/features-section.css">
+  <link rel="icon" type="image/x-icon" href="../logo.png">
+  <script defer src="../Scripts/script.js"></script>
+  <script defer src="../Scripts/gallery.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- HEADER / NAVBAR -->
+  <header>
+    <nav role="navigation" aria-label="Main navigation">
+      <div class="logo">
+        <img class="logoimg" src="../logo.png" alt="Anux Logo" />
+        <!-- <h1>Anux</h1> --- IGNORE --- -->
+      </div>
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#problem-section">Problems &amp; Solutions</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#comparison">Comparison</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+      </ul>
+      <div class="auth-buttons">
+        <button aria-label="Log In" onclick="window.location.href='login.html'">Log In</button>
+        <button class="sign" aria-label="Sign Up" onclick="window.location.href='signup.html'">Sign Up</button>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Toggle mobile menu">☰</button>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="hero" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h2>Transform Your Academic Journey with AI</h2>
+                <p>Anux AI combines cutting-edge artificial intelligence with proven study methodologies to help you achieve academic excellence. From personalized study plans to intelligent note-taking, we're your complete academic companion.</p>
+                <button class="get-started-btn" onclick="window.location.href='signup.html'">Get Started Free</button>
+            </div>
+            <div class="hero-demo">
+                <div class="demo-container">
+                    <div class="demo-screen">
+                        <div class="demo-header">
+                            <div class="demo-dots">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="demo-title">Anux Dashboard</div>
+                        </div>
+                        <div class="demo-content">
+                            <div class="demo-sidebar">
+                                <div class="demo-nav-item active">Dashboard</div>
+                                <div class="demo-nav-item">Neuronote AI</div>
+                                <div class="demo-nav-item">Study Planner</div>
+                                <div class="demo-nav-item">CollabSpace</div>
+                                <div class="demo-nav-item">Quiz Generator</div>
+                            </div>
+                            <div class="demo-main">
+                                <div class="demo-card">
+                                    <div class="demo-card-header">Today's Progress</div>
+                                    <div class="demo-progress-bar">
+                                        <div class="demo-progress-fill"></div>
+                                    </div>
+                                    <div class="demo-stats">78% Complete • 4 hours studied</div>
+                                </div>
+                                <div class="demo-card">
+                                    <div class="demo-card-header">Upcoming Tasks</div>
+                                    <div class="demo-stats">• Math Assignment Due Tomorrow<br>• Physics Quiz on Friday<br>• History Essay Draft</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  <!-- CALL-OUT USP -->
+  <section class="usp">
+    <h2>The Only AI Learning Platform <span class="Blue">Tailored to Your Curriculum</span></h2>
+    <div class="curriculum-cards">
+      <div class="card">
+        <h3>NCERT</h3>
+        <p>National curriculum framework for Indian schools, providing comprehensive study materials across all subjects.</p>
+      </div>
+      
+      <div class="card">
+        <h3>CBSE</h3>
+        <p>Central Board of Secondary Education curriculum with detailed chapter-wise content and exam preparation.</p>
+      </div>
+      
+      <div class="card">
+        <h3>ICSE</h3>
+        <p>Indian Certificate of Secondary Education board with specialized content for comprehensive learning.</p>
+      </div>
+      
+      <div class="card">
+        <h3>State Boards</h3>
+        <p>Regional state board curricula including Maharashtra, Tamil Nadu, Karnataka, and many more states.</p>
+      </div>
+      
+      <div class="card">
+        <h3>International</h3>
+        <p>Global curricula including IB, Cambridge IGCSE, and other international education frameworks.</p>
+      </div>
+      
+      <div class="card">
+        <h3>Competitive Exams</h3>
+        <p>Specialized preparation for JEE, NEET, UPSC, and other competitive examinations with targeted content.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEMS & SOLUTIONS -->
+  <section id="problem-section" role="region" aria-label="Problems and Solutions">
+    <h2 class="ph2">Real <span class="Blue">Problems</span> Real <span class="Blue">AI Solutions</span></h2>
+    <div class="problem-solution">
+      <div class="problem">
+        <h3>Problem</h3>
+        <p>Students waste hours looking for reliable study notes.</p>
+      </div>
+      <div class="solution">
+        <h3>Solution</h3>
+        <p>Neuronote AI instantly generates summaries, flashcards, and detailed notes.</p>
+      </div>
+    </div>
+    <div class="problem-solution">
+      <div class="problem">
+        <h3>Problem</h3>
+        <p>Lack of structure makes exam prep stressful and ineffective.</p>
+      </div>
+      <div class="solution">
+        <h3>Solution</h3>
+        <p>AI Study Planner builds a step-by-step schedule aligned with your syllabus.</p>
+      </div>
+    </div>
+
+    <div class="problem-solution">
+      <div class="problem">
+        <h3>Problem</h3>
+        <p>Students struggle to stay motivated and connected when studying alone.</p>
+      </div>
+      <div class="solution">
+        <h3>Solution</h3>
+        <p>CollabSpace enables group learning, class dashboards, and AI-assisted discussions.</p>
+    </div>
+    </div>
+    <div class="problem-solution">
+    <div class="problem">
+        <h3>Problem</h3>
+        <p>Students struggle to identify and improve their weak areas.</p>
+    </div>
+      <div class="solution">
+        <h3>Solution</h3>
+        <p>Weakness Finder detects knowledge gaps and provides targeted practice.</p> 
+    
+    </div>
+    </div>
+    <div class="problem-solution">
+    <div class="problem">
+        <h3>Problem</h3>
+        <p>Managing notes, assignments, and schedules across multiple platforms is chaotic.</p>
+      </div>
+      <div class="solution">
+        <h3>Solution</h3>
+        <p>All-in-One Dashboard consolidates everything students need in one place.</p>
+    </div>
+    </div>
+    <div class="problem-solution">
+    <div class="problem">
+        <h3>Problem</h3>
+        <p>Students receive Generic content , Making Exam Prep Difficult</p>
+    </div>
+        <div class="solution">
+            <h3>Solution</h3>
+            <p>Anux AI's tools are curriculum-aware, providing relevant and effective study materials.</p>
+        </div>
+    </div>    
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features">
+        <div class="features-showcase">
+            <h2>Powerful Features for Academic Success</h2>
+            
+            <!-- Neuronote AI Demo -->
+            <div class="feature-demo">
+                <div class="feature-text">
+                    <h3>🧠 Neuronote AI</h3>
+                    <p>Transform your notes into powerful study materials with AI-powered summarization, key concept extraction, and intelligent organization.</p>
+                </div>
+                <div class="feature-visual">
+                    <div class="neuronote-demo">
+                        <div class="demo-window">
+                            <div class="demo-window-header">Neuronote AI Assistant</div>
+                            <div class="demo-window-content">
+                                <div class="demo-input">
+                                    "Photosynthesis is the process by which plants convert light energy into chemical energy..."
+                                </div>
+                                <div class="demo-output">
+                                    <div class="typing-animation">
+                                        <span>AI is analyzing...</span>
+                                        <div class="typing-dots">
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                    <div class="demo-summary">
+                                        <h4>📝 Summary Generated</h4>
+                                        <p><strong>Key Process:</strong> Plants convert light → chemical energy</p>
+                                        <h4>🎯 Key Concepts</h4>
+                                        <ul>
+                                            <li>Chlorophyll absorption</li>
+                                            <li>Light-dependent reactions</li>
+                                            <li>Calvin cycle</li>
+                                            <li>Glucose production</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Study Planner Demo -->
+            <div class="feature-demo reverse">
+                <div class="feature-visual">
+                    <div class="planner-demo">
+                        <div class="demo-calendar">
+                            <div class="calendar-header">AI Study Planner</div>
+                            <div class="calendar-grid">
+                                <div class="calendar-day active">
+                                    <strong>MON</strong>
+                                    <span class="event math">Math Review</span>
+                                </div>
+                                <div class="calendar-day">
+                                    <strong>TUE</strong>
+                                    <span class="event study">Physics Lab</span>
+                                </div>
+                                <div class="calendar-day">
+                                    <strong>WED</strong>
+                                    <span class="event review">History Quiz</span>
+                                </div>
+                                <div class="calendar-day">
+                                    <strong>THU</strong>
+                                    <span class="event exam">Final Prep</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="feature-text">
+                    <h3>📅 AI Study Planner</h3>
+                    <p>Let AI create personalized study schedules that adapt to your learning pace, deadlines, and optimal study times for maximum retention.</p>
+                </div>
+            </div>
+
+            <!-- CollabSpace Demo -->
+            <div class="feature-demo">
+                <div class="feature-text">
+                    <h3>👥 CollabSpace</h3>
+                    <p>Connect with study groups and get AI-powered assistance during collaborative sessions. Share notes, discuss concepts, and learn together.</p>
+                </div>
+                <div class="feature-visual">
+                    <div class="collab-demo">
+                        <div class="chat-window">
+                            <div class="chat-header">Study Group: Physics 101</div>
+                            <div class="chat-messages">
+                                <div class="message">Sarah: Can someone explain Newton's 3rd law?</div>
+                                <div class="message ai">AI Assistant: For every action, there's an equal and opposite reaction. Think of walking - you push back on the ground, and the ground pushes you forward!</div>
+                                <div class="message">Mike: That makes so much sense now!</div>
+                                <div class="message">Sarah: Thanks! The AI examples are really helpful 🎯</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <span class="feature-icon">🎯</span>
+                <h4>Quiz Generator</h4>
+                <p>Create custom quizzes from your notes and textbooks. AI generates questions that test your understanding at the right difficulty level.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">🔍</span>
+                <h4>Weakness Finder</h4>
+                <p>Identify knowledge gaps and weak areas through intelligent analysis of your performance across different subjects and topics.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">📊</span>
+                <h4>All-in-One Dashboard</h4>
+                <p>Monitor your academic progress, track study streaks, and visualize your learning journey with comprehensive analytics and insights.</p>
+            </div>
+        </div>
+    </section>
+
+  <!-- VISUAL SHOWCASE GALLERY -->
+  <section class="visual-showcase">
+    <h2>See Anux in Action</h2>
+    <div class="gallery-container">
+      <div class="gallery-nav">
+        <button class="gallery-btn active" data-gallery="dashboard">📊 Dashboard</button>
+        <button class="gallery-btn" data-gallery="ai-tools">🧠 AI Tools</button>
+        <button class="gallery-btn" data-gallery="collaboration">👥 Collaboration</button>
+        <button class="gallery-btn" data-gallery="analytics">📈 Analytics</button>
+      </div>
+      
+      <div class="gallery-content">
+        <div class="gallery-section active" id="dashboard">
+          <div class="gallery-grid">
+            <div class="gallery-item">
+              <div class="mockup-screen">
+                <div class="mockup-header">
+                  <div class="mockup-dots">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <div class="mockup-title">Student Dashboard</div>
+                </div>
+                <div class="mockup-content">
+                  <div class="progress-overview">
+                    <h4>Today's Progress</h4>
+                    <div class="progress-circle">
+                      <div class="progress-text">85%</div>
+                    </div>
+                  </div>
+                  <div class="quick-stats">
+                    <div class="stat-item">
+                      <span class="stat-number">12</span>
+                      <span class="stat-label">Completed</span>
+                    </div>
+                    <div class="stat-item">
+                      <span class="stat-number">3</span>
+                      <span class="stat-label">Pending</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h4>Personalized Dashboard</h4>
+              <p>Track your learning progress with intelligent insights and personalized recommendations.</p>
+            </div>
+            
+            <div class="gallery-item">
+              <div class="mockup-screen">
+                <div class="mockup-header">
+                  <div class="mockup-dots">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <div class="mockup-title">Study Schedule</div>
+                </div>
+                <div class="mockup-content">
+                  <div class="schedule-view">
+                    <div class="schedule-item active">
+                      <span class="time">9:00 AM</span>
+                      <span class="subject">Mathematics</span>
+                    </div>
+                    <div class="schedule-item">
+                      <span class="time">11:00 AM</span>
+                      <span class="subject">Physics</span>
+                    </div>
+                    <div class="schedule-item">
+                      <span class="time">2:00 PM</span>
+                      <span class="subject">Chemistry</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h4>Smart Scheduling</h4>
+              <p>AI-optimized study schedules that adapt to your learning patterns and preferences.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="gallery-section" id="ai-tools">
+          <div class="gallery-grid">
+            <div class="gallery-item">
+              <div class="mockup-screen">
+                <div class="mockup-header">
+                  <div class="mockup-dots">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <div class="mockup-title">AI Note Summarizer</div>
+                </div>
+                <div class="mockup-content">
+                  <div class="ai-processing">
+                    <div class="processing-text">Analyzing your notes...</div>
+                    <div class="processing-bar">
+                      <div class="processing-fill"></div>
+                    </div>
+                  </div>
+                  <div class="summary-result">
+                    <h5>Key Concepts Identified:</h5>
+                    <ul>
+                      <li>Photosynthesis process</li>
+                      <li>Chlorophyll function</li>
+                      <li>Light reactions</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <h4>Intelligent Summarization</h4>
+              <p>Transform lengthy notes into concise, actionable study materials with AI-powered analysis.</p>
+            </div>
+            
+            <div class="gallery-item">
+              <div class="mockup-screen">
+                <div class="mockup-header">
+                  <div class="mockup-dots">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <div class="mockup-title">Quiz Generator</div>
+                </div>
+                <div class="mockup-content">
+                  <div class="quiz-preview">
+                    <div class="question">
+                      <h5>Question 1 of 5</h5>
+                      <p>What is the primary function of chlorophyll?</p>
+                    </div>
+                    <div class="quiz-options">
+                      <div class="option">A) Absorb light energy</div>
+                      <div class="option correct">B) Convert light to chemical energy</div>
+                      <div class="option">C) Store glucose</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h4>Adaptive Quizzes</h4>
+              <p>Generate personalized quizzes from your study materials with difficulty adjustment.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="gallery-section" id="collaboration">
+          <div class="gallery-grid">
+            <div class="gallery-item">
+              <div class="mockup-screen">
+                <div class="mockup-header">
+                  <div class="mockup-dots">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <div class="mockup-title">Study Groups</div>
+                </div>
+                <div class="mockup-content">
+                  <div class="group-chat">
+                    <div class="chat-message">
+                      <span class="user">Alex:</span>
+                      <span class="text">Need help with calculus!</span>
+                    </div>
+                    <div class="chat-message ai">
+                      <span class="user">AI Tutor:</span>
+                      <span class="text">I can help! What specific topic?</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h4>Collaborative Learning</h4>
+              <p>Join study groups with AI-assisted discussions and peer-to-peer learning.</p>
+            </div>
+            
+            <div class="gallery-item">
+              <div class="mockup-screen">
+                <div class="mockup-header">
+                  <div class="mockup-dots">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <div class="mockup-title">Shared Resources</div>
+                </div>
+                <div class="mockup-content">
+                  <div class="resource-list">
+                    <div class="resource-item">
+                      <span class="icon">📄</span>
+                      <span class="name">Physics Notes.pdf</span>
+                      <span class="shared-by">by Sarah</span>
+                    </div>
+                    <div class="resource-item">
+                      <span class="icon">🎥</span>
+                      <span class="name">Math Tutorial</span>
+                      <span class="shared-by">by Mike</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h4>Resource Sharing</h4>
+              <p>Share and access study materials within your learning community.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="gallery-section" id="analytics">
+          <div class="gallery-grid">
+            <div class="gallery-item">
+              <div class="mockup-screen">
+                <div class="mockup-header">
+                  <div class="mockup-dots">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <div class="mockup-title">Performance Analytics</div>
+                </div>
+                <div class="mockup-content">
+                  <div class="analytics-chart">
+                    <div class="chart-bars">
+                      <div class="bar" style="height: 60%"></div>
+                      <div class="bar" style="height: 80%"></div>
+                      <div class="bar" style="height: 45%"></div>
+                      <div class="bar" style="height: 90%"></div>
+                    </div>
+                    <div class="chart-labels">
+                      <span>Math</span>
+                      <span>Physics</span>
+                      <span>Chemistry</span>
+                      <span>Biology</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h4>Learning Analytics</h4>
+              <p>Detailed insights into your learning patterns and performance trends.</p>
+            </div>
+            
+            <div class="gallery-item">
+              <div class="mockup-screen">
+                <div class="mockup-header">
+                  <div class="mockup-dots">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <div class="mockup-title">Weakness Analysis</div>
+                </div>
+                <div class="mockup-content">
+                  <div class="weakness-analysis">
+                    <div class="weakness-item">
+                      <span class="subject">Calculus</span>
+                      <div class="weakness-bar">
+                        <div class="weakness-fill" style="width: 30%"></div>
+                      </div>
+                      <span class="percentage">30%</span>
+                    </div>
+                    <div class="weakness-item">
+                      <span class="subject">Organic Chemistry</span>
+                      <div class="weakness-bar">
+                        <div class="weakness-fill" style="width: 60%"></div>
+                      </div>
+                      <span class="percentage">60%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h4>Weakness Identification</h4>
+              <p>AI identifies your weak areas and suggests targeted improvement strategies.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON -->
+  <section id="comparison" role="region" aria-label="Platform Comparison">
+    <h2>Why Anux is Different</h2>
+    <div class="comparison-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Anux</th>
+            <th>Others</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="feature">Curriculum Awareness</td>
+            <td class="check">✅ Tailored (NCERT, IB, CBSE, IGCSE, etc.)</td>
+            <td class="cross">❌ Generic only</td>
+          </tr>
+          <tr>
+            <td class="feature">AI-Powered Notes</td>
+            <td class="check">✅ Integrated with syllabus</td>
+            <td class="cross">❌ Limited</td>
+          </tr>
+          <tr>
+            <td class="feature">Collaboration + AI Tools</td>
+            <td class="check">✅ All-in-One</td>
+            <td class="cross">❌ Separate platforms</td>
+          </tr>
+          <tr>
+            <td class="feature">Personalized Study Plans</td>
+            <td class="check">✅ Yes</td>
+            <td class="cross">❌ No</td>
+          </tr>
+          <tr>
+            <td class="feature">Mock Exams & Quizzes</td>
+            <td class="check">✅ Instant & Adaptive</td>
+            <td class="cross">❌ Manual effort</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" role="region" aria-label="Pricing Plans">
+    <h2>Simple <span class="Blue">Pricing</span> Maximum <span class="Blue">Value</span></h2>
+    <div class="pricing-cards">
+      <div class="pricing-card">
+        <h3>Free</h3>
+        <div class="price">$0<span>/month</span></div>
+        <ul>
+          <li>Basic AI tools</li>
+          <li>Neuronote Lite</li>
+          <li>Study planner</li>
+          <li>Limited storage</li>
+        </ul>
+        <button class="cta-button" onclick="window.location.href='signup.html'">Get Started</button>
+      </div>
+      <div class="pricing-card popular">
+        <h3>Pro</h3>
+        <div class="price">$29.99<span>/month</span></div>
+        <ul>
+          <li>All AI features</li>
+          <li>Unlimited quizzes</li>
+          <li>Mock exams</li>
+          <li>CollabSpace access</li>
+          <li>Priority support</li>
+        </ul>
+        <button class="cta-button" onclick="window.location.href='signup.html'">Start Free Trial</button>
+      </div>
+      <div class="pricing-card">
+        <h3>Enterprise</h3>
+        <div class="price">Custom<span>/pricing</span></div>
+        <ul>
+          <li>Custom dashboards</li>
+          <li>Analytics for institutions</li>
+          <li>Bulk user management</li>
+          <li>Dedicated support</li>
+        </ul>
+        <button class="cta-button">Contact Us</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="footer-content">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="#hero">Home</a>
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#problem-section">Solutions</a>
+        <a href="#comparison">Compare</a>
+      </nav>
+      <div class="footer-text">
+        <p>&copy; 2025 Anux. All rights reserved. Empowering students with AI-powered learning.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
